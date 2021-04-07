@@ -49,6 +49,10 @@ func ContentType(value string) Option {
 	return setHeader(HTTPHeaderContentType, value)
 }
 
+func EnableMD5Checksum() Option {
+	return addArg("checkmd5", true)
+}
+
 // ContentLength is an option to set Content-Length header
 func ContentLength(length int64) Option {
 	return setHeader(HTTPHeaderContentLength, strconv.FormatInt(length, 10))
